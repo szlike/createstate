@@ -6,6 +6,8 @@ import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { createEmotionCache } from '../utils/create-emotion-cache';
 import { theme } from '../theme';
+import './App.css'
+
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,6 +26,10 @@ const App = (props) => {
           name="viewport"
           content="initial-scale=1, width=device-width"
         />
+        <link
+         rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+       />
       </Head>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeProvider theme={theme}>

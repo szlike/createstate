@@ -1,0 +1,50 @@
+.body{
+  background-color: #cdd6e9;
+}
+.container-fluid{
+  background-color: #92ace1;
+}
+.navbar-default {
+  background-color: #8c9dac;
+  margin-bottom: 10px;
+  /* height:50px; */
+}
+
+.navbar .navbar-brand {
+  color: #ffffff;
+  text-align: center;
+  /* font-size: 30px; */
+}
+
+input,
+select,
+label {
+  width: 70px;
+  margin-right: 5px;
+}
+
+th,
+td {
+  padding: 0 7px;
+  text-align: right;
+}
+
+.money {
+  padding-left: 1rem;
+  color: #428bca;
+}
+
+tbody,
+tfoot tr:first-child {
+  border-top: #428bca solid 1px;
+}
+
+.line {
+  fill: none;
+  stroke: #428bca;
+  stroke-width: 1.5px;
+}
+
+.baseline {
+  stroke-dasharray: 4, 4;
+}
