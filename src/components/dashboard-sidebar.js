@@ -12,6 +12,7 @@ import { ShoppingBag as ShoppingBagIcon } from '../icons/shopping-bag';
 import { User as UserIcon } from '../icons/user';
 import { UserAdd as UserAddIcon } from '../icons/user-add';
 import { Users as UsersIcon } from '../icons/users';
+import { Mortgage as MortgageIcon } from '../icons/mortgage';
 import { XCircle as XCircleIcon } from '../icons/x-circle';
 import { Logo } from './logo';
 import { NavItem } from './nav-item';
@@ -56,6 +57,11 @@ const items = [
     href: '/404',
     icon: (<XCircleIcon fontSize="small" />),
     title: 'Error'
+  },
+  {
+    href: '/mortgage',
+    icon: (<MortgageIcon/>),
+    title: 'Mortgage'
   }
 ];
 
