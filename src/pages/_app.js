@@ -26,10 +26,6 @@ const App = (props) => {
           name="viewport"
           content="initial-scale=1, width=device-width"
         />
-        <link
-         rel="stylesheet"
-         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-       />
       </Head>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeProvider theme={theme}>
