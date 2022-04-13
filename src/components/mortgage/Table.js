@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Box, Button, Card, CardContent, CardHeader, Divider, useTheme } from '@mui/material';
 export default ({ payments, className }) => {
   let output = payments
     .filter((year, i) => i > 0 && (year.balance > 0 || year.interestYearly > 0))
@@ -21,34 +21,47 @@ export default ({ payments, className }) => {
     );
   
 
-  return (
-    <table className={className}>
-      <thead>
-        <tr>
-          <th>Years</th>
-          <th>Interest</th>
-          <th>Overpayment</th>
-          <th>Balance</th>
-        </tr>
-      </thead>
-      <tbody>
-        {output.rows.map((row, index) => (
-          <tr key={index}>
-            {row.map((d, i) => (
-              <td key={i}>{d.toLocaleString()}</td>
-            ))}
+    return (
+      <Card >
+      
+        <CardContent>
+          <Box
+            sx={{
+              height: 400,
+              position: 'relative'
+            }}
+          >
+      <table className={className}>
+        <thead>
+          <tr>
+            <th>Years</th>
+            <th>Interest</th>
+            <th>Overpayment</th>
+            <th>Balance</th>
           </tr>
-        ))}
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colSpan={2}>
-            {Math.round(output.interestTotal).toLocaleString()}
-          </td>
-          <td>{Math.round(output.overpaymentTotal).toLocaleString()}</td>
-          <td />
-        </tr>
-      </tfoot>
-    </table>
-  );
-};
+        </thead>
+        <tbody>
+          {output.rows.map((row, index) => (
+            <tr key={index}>
+              {row.map((d, i) => (
+                <td key={i}>{d.toLocaleString()}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan={2}>
+              {Math.round(output.interestTotal).toLocaleString()}
+            </td>
+            <td>{Math.round(output.overpaymentTotal).toLocaleString()}</td>
+            <td />
+          </tr>
+        </tfoot>
+      </table>
+          </Box>
+        </CardContent>
+      
+      </Card>
+    );
+  };

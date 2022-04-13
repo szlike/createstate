@@ -7,13 +7,15 @@
 .navbar-default {
   background-color: #8c9dac;
   margin-bottom: 10px;
-  /* height:50px; */
 }
 
 .navbar .navbar-brand {
   color: #ffffff;
   text-align: center;
-  /* font-size: 30px; */
+}
+
+.navbar-brand{
+  text-align: center;
 }
 
 input,

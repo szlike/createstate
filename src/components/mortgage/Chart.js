@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
+import { Box, Button, Card, CardContent, CardHeader, Divider, useTheme } from '@mui/material';
 import { select } from 'd3-selection';
 import { line } from 'd3-shape';
 import { scaleLinear } from 'd3-scale';
@@ -50,6 +50,15 @@ export default ({ payments }) => {
   }, [payments]);
 
   return (
+    <Card >
+      
+    <CardContent>
+      <Box
+        sx={{
+          height: 400,
+          position: 'relative'
+        }}
+      >
     <svg
       ref={chart}
       height="100%"
@@ -63,5 +72,9 @@ export default ({ payments }) => {
         <path className="line actual" />
       </g>
     </svg>
+    </Box>
+        </CardContent>
+      
+      </Card>
   );
 };

@@ -13,4 +13,4 @@ export const Mortgage = createSvgIcon(
     />
   </svg>,
   'Mortgage'
-);
+)
