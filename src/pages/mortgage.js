@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Box,Container, Grid} from '@mui/material';
-import  Table  from '../components/mortgage/Table';
+import  Table  from '../components/mortgage/table';
 import React, { useState } from 'react';
-import Chart from '../components/mortgage/Chart';
+import Chart from '../components/mortgage/chart';
 import calculate from '../components/mortgage/calculations';
 
 import { DashboardLayout } from '../components/dashboard-layout';

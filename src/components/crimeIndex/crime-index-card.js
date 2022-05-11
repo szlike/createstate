@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import { Avatar, Box, Card, CardContent, Divider, Grid, Typography } from '@mui/material';
-import { Clock as ClockIcon } from '../../icons/clock';
-import { Download as DownloadIcon } from '../../icons/download';
+import {Box, Card, CardContent,Typography } from '@mui/material';
+
 
 export const CrimeIndexCard = ({ crimeIndexData, ...rest }) => (
   <Card
@@ -20,11 +19,6 @@ export const CrimeIndexCard = ({ crimeIndexData, ...rest }) => (
           pb: 3
         }}
       >
-        <Avatar
-          alt="Product"
-          src={crimeIndexData.media}
-          variant="square"
-        />
       </Box>
       <Typography
         align="center"
@@ -33,6 +27,13 @@ export const CrimeIndexCard = ({ crimeIndexData, ...rest }) => (
         variant="h5"
       >
         {crimeIndexData.title}
+      </Typography>
+      <Typography
+        align="center"
+        color="red"
+        variant="body1"
+      >
+        {crimeIndexData.description}
       </Typography>
     </CardContent>
     <Box sx={{ flexGrow: 1 }} />
