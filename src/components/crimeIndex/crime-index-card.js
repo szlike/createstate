@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import {Box, Card, CardContent,Typography } from '@mui/material';
+import { Box, Card, CardContent, Typography } from '@mui/material';
 
 
 export const CrimeIndexCard = ({ crimeIndexData, ...rest }) => (
