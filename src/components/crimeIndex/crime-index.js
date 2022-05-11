@@ -9,7 +9,6 @@ import {
   SvgIcon, Typography
 } from '@mui/material';
 import { Search as SearchIcon } from '../../icons/search';
-import { height } from '@mui/system';
 
 export const CrimeIndex = (props) => (
   

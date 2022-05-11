@@ -64,9 +64,9 @@ const items = [
     title: 'Mortgage'
   },
   {
-    href: '/crimeIndexPage',
+    href: '/crime-index',
     icon: (<MortgageIcon/>),
-    title: 'CrimeIndexPage'
+    title: 'CrimeIndex'
   }
 ];
 

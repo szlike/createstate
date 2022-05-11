@@ -48,7 +48,7 @@ const Products = () => (
         >
           <Pagination
             color="primary"
-            count={3}
+            count={6}
             size="small"
           />
         </Box>
