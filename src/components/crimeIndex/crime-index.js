@@ -8,11 +8,25 @@ import {
   InputAdornment,
   SvgIcon, Typography
 } from '@mui/material';
+import { useState,useEffect } from 'react';
 import { Search as SearchIcon } from '../../icons/search';
 
-export const CrimeIndex = (props) => (
+export const CrimeIndex = (props) => {
+  const {getKeyword,getCrimeIndex,handler}=props
+  const [value,setValue]=useState('')
+  useEffect(()=>{
+    getKeyword(value)
+  },[value])
+
+  const clickHandler=()=>{
+    if(value!=''){
+
+    }
+
+  }
   
-  <Box {...props}>
+  return(
+  <Box >
      <Typography
         sx={{ textAlign:'center'}}
         variant="h4"
@@ -51,6 +65,11 @@ export const CrimeIndex = (props) => (
               }}
               placeholder="Search"
               variant="outlined"
+              value={value}
+              onChange={ (e)=>{
+                 setValue(e.target.value)
+              }
+              }
             />
           </Box>
         </CardContent>
@@ -65,6 +84,7 @@ export const CrimeIndex = (props) => (
             <Button
               color="primary"
               variant="contained"
+              onClick={handler}
             >
               Search
             </Button>
@@ -78,4 +98,4 @@ export const CrimeIndex = (props) => (
     </Grid>
 
   </Box>
-);
+)};
