@@ -1,12 +1,13 @@
 import Head from 'next/head';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid, Pagination } from '@mui/material';
 import crimeIndex from 'src/service/crime-index-formular';
 import { CrimeIndex } from '../components/crimeIndex/crime-index';
 import { CrimeIndexCard } from '../components/crimeIndex/crime-index-card';
 import { DashboardLayout } from '../components/dashboard-layout';
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import Link from 'next/link'
+import Link from 'next/link';
+import usePagination from '../components/pagination';
 
 
 const fetchData = async () => {
@@ -46,6 +47,13 @@ const fetchData = async () => {
 export default function CrimeIndexPage() {
   const [crimeIndex, setCrimeIndex] = useState([])
   const [keyword,setKeyword]=useState("")
+
+  //const value for Pagination
+  const [page, setPage] = useState(1)
+  const PER_PAGE = 10; 
+  const count = Math.ceil(crimeIndex.length / PER_PAGE);
+  const _DATA = usePagination(crimeIndex, PER_PAGE);
+
   const getKeyword=(val)=>{
     setKeyword(val)
   }
@@ -64,6 +72,13 @@ export default function CrimeIndexPage() {
 
     }
   }
+
+  const pageHandle = (effect, _page) => {
+    setPage(_page);
+    _DATA.jump(_page);
+    console.log(_page);
+  }
+
   useEffect(async () => {
     const data = await fetchData()
     setCrimeIndex(data)
@@ -83,7 +98,7 @@ export default function CrimeIndexPage() {
         component="main"
         sx={{
           flexGrow: 1,
-          py: 8
+          py: 3
         }}
       >
         <Container maxWidth={false}>
@@ -93,7 +108,7 @@ export default function CrimeIndexPage() {
               container
               spacing={3}
             >
-              {crimeIndex.map((item) => (
+              {_DATA.currentData().map((item) => (
 
               <Link href={"./crime-detail?title="+item.title}>
                 <Grid
@@ -114,9 +129,16 @@ export default function CrimeIndexPage() {
             sx={{
               display: 'flex',
               justifyContent: 'center',
-              pt: 3
+              pt: 5
             }}
           >
+            <Pagination
+              color="primary"
+              count={count}
+              page={page}
+              size="medium"
+              onChange={pageHandle}
+            />
           </Box>
         </Container>
       </Box>
