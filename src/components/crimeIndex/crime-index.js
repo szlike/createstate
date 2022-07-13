@@ -39,12 +39,12 @@ export const CrimeIndex = (props) => {
         display: 'flex',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        m: -1
+        m: 1
       }}
     >
     </Box>
     <Grid container spacing={2}>
-      <Grid xs={8}>
+      <Grid xs={9}>
       <Box sx={{ mt: 3 }}>
         <Card>
         <CardContent>
@@ -76,7 +76,7 @@ export const CrimeIndex = (props) => {
       </Card>
       </Box>
       </Grid>
-      <Grid xs={4}>
+      <Grid xs={3}>
       <Box sx={{ mt: 3 }}>
         <Card>
         <CardContent>
@@ -85,6 +85,7 @@ export const CrimeIndex = (props) => {
               color="primary"
               variant="contained"
               onClick={handler}
+              sx={{ mt:1}}
             >
               Search
             </Button>
